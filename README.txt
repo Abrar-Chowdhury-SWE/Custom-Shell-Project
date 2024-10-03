@@ -1,4 +1,35 @@
-Abrar Chowdhury
+Prompt format When running in interactive mode, mysh will print a prompt to indicate that it
+is ready to read input. The prompt is normally the string “mysh> ” (note the trailing space).
+
+Usage Batch mode:
+$ cat myscript.sh
+echo hello
+$ ./mysh myscript.sh
+hello
+$
+Batch mode with no specified file:
+$ cat myscript.sh | ./mysh
+hello
+$
+
+Interactive mode:
+$ ./mysh
+Welcome to my shell!
+mysh> cd subdir
+mysh> echo hello
+hello
+mysh> cd subsubdir
+mysh> pwd
+/current/path/subdir/subsubdir
+mysh> cd directory_that_does_not_exist
+cd: No such file or directory
+mysh> cd ../..
+mysh> exit
+mysh: exiting
+$
+
+
+
 
 Test Plan:
 
